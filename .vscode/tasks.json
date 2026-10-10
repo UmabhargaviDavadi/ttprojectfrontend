@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install frontend packages",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"--no-audit",
+				"--no-fund"
+			],
+			"problemMatcher": []
+		}
+	]
+}

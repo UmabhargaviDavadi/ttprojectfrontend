@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #18332e;
+  background: #f4f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+::selection {
+  background: #c9e8d4;
+  color: #18332e;
+}
+.dark {
+  color-scheme: dark;
+}
+.finance-toast {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  aside,
+  header,
+  footer,
+  button,
+  input {
+    display: none !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .report-content {
+    color: #18332e !important;
+  }
+  .report-content section {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
