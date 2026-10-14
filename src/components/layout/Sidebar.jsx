@@ -1,8 +1,18 @@
-import { NavLink, Link } from 'react-router-dom'
-import { CircleUserRound, Leaf, PanelLeftClose, X } from 'lucide-react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { CircleUserRound, Leaf, LogOut, PanelLeftClose, X } from 'lucide-react'
 import { NAV_ITEMS } from '../../utils/constants'
+import { useAuth } from '../../hooks/useAuth'
 
 export function Sidebar({ open, onClose }) {
+  const { logout } = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    onClose()
+    navigate('/login', { replace: true })
+  }
+
   return (
     <>
       {open && (
@@ -70,6 +80,14 @@ export function Sidebar({ open, onClose }) {
           <CircleUserRound className="size-[18px]" />
           Profile & settings
         </Link>
+        <button
+          type="button"
+          onClick={handleLogout}
+          className="mt-1 flex min-h-11 w-full items-center gap-3 rounded-lg px-3 text-left text-sm font-semibold text-rose-600 hover:bg-rose-50 dark:text-rose-400 dark:hover:bg-rose-950/30"
+        >
+          <LogOut className="size-[18px]" aria-hidden="true" />
+          Log out
+        </button>
       </aside>
     </>
   )
