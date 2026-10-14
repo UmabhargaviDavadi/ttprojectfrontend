@@ -20,7 +20,7 @@ The Vite dev server prints its local URL (normally `http://localhost:5173`). Cre
 
 | Variable            | Default                     | Purpose                                                                                  |
 | ------------------- | --------------------------- | ---------------------------------------------------------------------------------------- |
-| `VITE_API_BASE_URL` | `https://ttprojectbackend-4obx.onrender.com/api` | Spring Boot API base URL                                                                 |
+| `VITE_API_BASE_URL` | `https://ttprojectbackend-1.onrender.com/api` | Spring Boot API base URL                                                                 |
 | `VITE_USE_MOCK`     | `false` in `.env.example`   | Use persistent browser mock data when exactly `true`; set to `false` to use the real API |
 
 For real API development, set `VITE_USE_MOCK=false` and ensure the Spring API allows the Vite origin through CORS. The JWT is stored in local storage and attached as a Bearer token. A `401` clears the local session and routes to sign-in. Mock changes are stored under `finance_mock_state_v1` in local storage; clear that key to reset demo data. Any email/password pair works in mock mode.

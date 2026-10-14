@@ -1,8 +1,14 @@
 import axios from 'axios'
 import { mockRequest } from './mockData'
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim()
+
+if (import.meta.env.PROD && !apiBaseUrl) {
+  throw new Error('VITE_API_BASE_URL must be configured for production builds.')
+}
+
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api',
+  baseURL: apiBaseUrl || 'http://localhost:8080/api',
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
 })
