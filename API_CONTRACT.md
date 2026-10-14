@@ -1,6 +1,6 @@
 # Mintwise API Contract
 
-Base URL: `http://localhost:8080/api` (overridable with `VITE_API_BASE_URL`). All routes below are relative to the base URL. JSON request/response bodies use UTF-8. Authenticated routes require `Authorization: Bearer <JWT>`; register and login are public. Dates are ISO `YYYY-MM-DD`; timestamps are ISO 8601. Amounts are positive JSON numbers and transaction type is lowercase `income` or `expense`.
+Base URL: `https://ttprojectbackend-1.onrender.com/api` (overridable with `VITE_API_BASE_URL`). All routes below are relative to the base URL. JSON request/response bodies use UTF-8. Authenticated routes require `Authorization: Bearer <JWT>`; register and login are public. Dates are ISO `YYYY-MM-DD`; timestamps are ISO 8601. Amounts are positive JSON numbers and transaction type is lowercase `income` or `expense`.
 
 The mock layer in `src/api/mockData.js` returns these same success shapes. It uses local browser storage for mutable demo data. Error responses should use `{ "message": "Human-readable explanation" }`; the client shows the message when available. Any authenticated `401` clears the local session and redirects to `/login`.
 
